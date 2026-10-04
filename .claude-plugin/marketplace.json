@@ -1,0 +1,12 @@
+{
+  "name": "drago-plugins",
+  "owner": { "name": "drago1520" },
+  "description": "Claude Code plugins by drago1520.",
+  "plugins": [
+    {
+      "name": "plain-prose-docs",
+      "source": "./plain-prose-docs",
+      "description": "Plain, connected first-person prose in markdown docs: no staccato, no forced or disguised negation."
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+{
+  "name": "plain-prose-docs",
+  "version": "1.0.0",
+  "author": { "name": "drago1520" },
+  "description": "Plain, connected first-person prose in markdown docs: no staccato, no forced or disguised negation. Skill with a rewrite-and-verify workflow plus a hook that reminds on every .md write."
+}
