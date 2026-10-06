@@ -6,6 +6,12 @@
         "hooks": [
           {
             "type": "command",
+            "if": "Write(*.md)",
+            "command": "node \"${CLAUDE_PLUGIN_ROOT}/hooks/hook.mjs\""
+          },
+          {
+            "type": "command",
+            "if": "Edit(*.md)",
             "command": "node \"${CLAUDE_PLUGIN_ROOT}/hooks/hook.mjs\""
           }
         ]

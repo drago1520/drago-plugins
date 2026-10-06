@@ -1,12 +1,19 @@
 {
   "name": "drago-plugins",
-  "owner": { "name": "drago1520" },
+  "owner": {
+    "name": "drago1520"
+  },
   "description": "Claude Code plugins by drago1520.",
   "plugins": [
     {
       "name": "plain-prose-docs",
       "source": "./plain-prose-docs",
       "description": "Plain, connected first-person prose in markdown docs: no staccato, no forced or disguised negation."
+    },
+    {
+      "name": "windows-wsl-vscode-git-worktrees-fix",
+      "source": "./windows-wsl-vscode-git-worktrees-fix",
+      "description": "Blocks git worktree commands that VS Code on Windows cannot read: WSL git on a /mnt/ drive and --relative-paths."
     }
   ]
 }

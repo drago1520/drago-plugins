@@ -1,0 +1,6 @@
+{
+  "name": "windows-wsl-vscode-git-worktrees-fix",
+  "version": "1.0.0",
+  "author": { "name": "drago1520" },
+  "description": "Blocks git worktree commands that VS Code on Windows can't read: WSL git on a /mnt/ drive and --relative-paths."
+}
