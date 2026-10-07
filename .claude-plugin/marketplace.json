@@ -13,7 +13,7 @@
     {
       "name": "windows-wsl-vscode-git-worktrees-fix",
       "source": "./windows-wsl-vscode-git-worktrees-fix",
-      "description": "Blocks git worktree commands that VS Code on Windows cannot read: WSL git on a /mnt/ drive and --relative-paths."
+      "description": "Blocks git worktree commands and the EnterWorktree tool when VS Code on Windows could not read the result: WSL git on a /mnt/ drive and --relative-paths."
     }
   ]
 }

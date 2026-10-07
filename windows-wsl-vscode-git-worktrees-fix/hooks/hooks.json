@@ -8,6 +8,12 @@
           { "type": "command", "if": "Bash(pwsh.exe *)", "command": "node \"${CLAUDE_PLUGIN_ROOT}/hooks/hook.mjs\"" },
           { "type": "command", "if": "Bash(powershell.exe *)", "command": "node \"${CLAUDE_PLUGIN_ROOT}/hooks/hook.mjs\"" }
         ]
+      },
+      {
+        "matcher": "EnterWorktree",
+        "hooks": [
+          { "type": "command", "command": "node \"${CLAUDE_PLUGIN_ROOT}/hooks/hook.mjs\"" }
+        ]
       }
     ]
   }
