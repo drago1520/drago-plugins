@@ -1,0 +1,6 @@
+{
+  "name": "error-handling",
+  "version": "1.0.0",
+  "author": { "name": "drago1520" },
+  "description": "Rules for how code fails: classify operational errors vs bugs, throw low and handle high, validate at the boundary, keep the cause, release resources in finally, and never swallow an error in a log-and-fallback catch."
+}

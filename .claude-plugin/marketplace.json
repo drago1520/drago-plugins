@@ -14,6 +14,11 @@
       "name": "windows-wsl-vscode-git-worktrees-fix",
       "source": "./windows-wsl-vscode-git-worktrees-fix",
       "description": "Blocks git worktree commands and the EnterWorktree tool when VS Code on Windows could not read the result: WSL git on a /mnt/ drive and --relative-paths."
+    },
+    {
+      "name": "error-handling",
+      "source": "./error-handling",
+      "description": "Rules for how code fails: operational errors vs bugs, throw low and handle high, validate at the boundary, keep the cause, finally for cleanup, no swallowed errors."
     }
   ]
 }

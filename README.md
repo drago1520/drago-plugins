@@ -25,3 +25,11 @@ Claude creates git worktrees that VS Code on Windows can open when it runs in WS
 ```
 /plugin install windows-wsl-vscode-git-worktrees-fix@drago-plugins
 ```
+
+### [error-handling](error-handling/README.md)
+
+Claude designs how each function fails: operational errors are handled at the boundary, bugs crash loudly, errors keep their cause, and nothing gets swallowed in a log-and-fallback catch.
+
+```
+/plugin install error-handling@drago-plugins
+```
