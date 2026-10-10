@@ -41,3 +41,19 @@ Claude writes tests that buy the most signal for the least cost: precise in-memo
 ```
 /plugin install unit-integration-testing@drago-plugins
 ```
+
+### [performance-measuring](performance-measuring/README.md)
+
+Claude measures before it optimises: percentiles over a window, monitoring then profiling then benchmarking, and every win guarded by a CI budget.
+
+```
+/plugin install performance-measuring@drago-plugins
+```
+
+### [load-testing](load-testing/README.md)
+
+Claude finds the knee of the curve on purpose, with an open-model workload, honest reading of the results, and the bottleneck found as the first resource that queued.
+
+```
+/plugin install load-testing@drago-plugins
+```

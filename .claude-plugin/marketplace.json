@@ -24,6 +24,16 @@
       "name": "unit-integration-testing",
       "source": "./unit-integration-testing",
       "description": "Rules for the tests Claude writes: layer by cost, one behaviour per unit test, fakes over mocks, double only the boundary, real DB in integration tests, flaky tests are bugs."
+    },
+    {
+      "name": "performance-measuring",
+      "source": "./performance-measuring",
+      "description": "Measure before optimising: percentiles over a window, monitor then profile then benchmark, read the profile shape, benchmark honestly, guard wins with CI budgets."
+    },
+    {
+      "name": "load-testing",
+      "source": "./load-testing",
+      "description": "Find the knee on purpose: the right test profile, an open-model workload, no coordinated omission, errors before percentiles, the first resource that queued."
     }
   ]
 }
