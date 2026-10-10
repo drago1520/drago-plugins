@@ -8,6 +8,12 @@ Add the marketplace once in Claude Code:
 /plugin marketplace add drago1520/drago-plugins
 ```
 
+To try a local checkout before pushing, add the folder instead and then `/reload-plugins` after each edit:
+
+```
+/plugin marketplace add ./drago-plugins
+```
+
 ## Plugins
 
 ### [plain-prose-docs](plain-prose-docs/README.md)

@@ -1,6 +1,11 @@
 {
   "name": "performance-measuring",
   "version": "1.0.0",
-  "author": { "name": "drago1520" },
-  "description": "Measure before optimising: percentiles over a window instead of averages, monitoring then profiling then benchmarking, read the profile shape for N+1s, benchmark with warm-up and varied input, and guard wins with CI budgets on stable signals."
+  "author": {
+    "name": "drago1520"
+  },
+  "description": "Measure before optimising: percentiles over a window instead of averages, monitoring then profiling then benchmarking, read the profile shape for N+1s, benchmark with warm-up and varied input, and guard wins with CI budgets on stable signals.",
+  "license": "MIT",
+  "homepage": "https://github.com/drago1520/drago-plugins/tree/main/performance-measuring",
+  "repository": "https://github.com/drago1520/drago-plugins"
 }

@@ -35,5 +35,10 @@
       "source": "./load-testing",
       "description": "Find the knee on purpose: the right test profile, an open-model workload, no coordinated omission, errors before percentiles, the first resource that queued."
     }
-  ]
+  ],
+  "metadata": {
+    "version": "1.0.0",
+    "license": "MIT",
+    "homepage": "https://github.com/drago1520/drago-plugins"
+  }
 }

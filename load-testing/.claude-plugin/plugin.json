@@ -1,6 +1,11 @@
 {
   "name": "load-testing",
   "version": "1.0.0",
-  "author": { "name": "drago1520" },
-  "description": "Find the knee on purpose: pick load, stress, spike, soak or breakpoint by the question, build an open-model workload with think time and a realistic key mix, avoid coordinated omission, read errors and achieved load before percentiles, and find the first resource that queued."
+  "author": {
+    "name": "drago1520"
+  },
+  "description": "Find the knee on purpose: pick load, stress, spike, soak or breakpoint by the question, build an open-model workload with think time and a realistic key mix, avoid coordinated omission, read errors and achieved load before percentiles, and find the first resource that queued.",
+  "license": "MIT",
+  "homepage": "https://github.com/drago1520/drago-plugins/tree/main/load-testing",
+  "repository": "https://github.com/drago1520/drago-plugins"
 }
