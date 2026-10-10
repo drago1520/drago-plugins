@@ -33,3 +33,11 @@ Claude designs how each function fails: operational errors are handled at the bo
 ```
 /plugin install error-handling@drago-plugins
 ```
+
+### [unit-integration-testing](unit-integration-testing/README.md)
+
+Claude writes tests that buy the most signal for the least cost: precise in-memory unit tests, integration tests against the real database for the seams, doubles only at the boundary, and flaky tests fixed as bugs.
+
+```
+/plugin install unit-integration-testing@drago-plugins
+```

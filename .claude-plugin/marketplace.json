@@ -19,6 +19,11 @@
       "name": "error-handling",
       "source": "./error-handling",
       "description": "Rules for how code fails: operational errors vs bugs, throw low and handle high, validate at the boundary, keep the cause, finally for cleanup, no swallowed errors."
+    },
+    {
+      "name": "unit-integration-testing",
+      "source": "./unit-integration-testing",
+      "description": "Rules for the tests Claude writes: layer by cost, one behaviour per unit test, fakes over mocks, double only the boundary, real DB in integration tests, flaky tests are bugs."
     }
   ]
 }
