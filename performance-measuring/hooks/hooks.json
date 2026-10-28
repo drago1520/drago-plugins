@@ -1,0 +1,101 @@
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"${CLAUDE_PLUGIN_ROOT}/hooks/hook.mjs\""
+          }
+        ]
+      },
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "if": "Bash(*hyperfine*)",
+            "command": "node \"${CLAUDE_PLUGIN_ROOT}/hooks/hook.mjs\""
+          },
+          {
+            "type": "command",
+            "if": "Bash(*pagespeed*)",
+            "command": "node \"${CLAUDE_PLUGIN_ROOT}/hooks/hook.mjs\""
+          },
+          {
+            "type": "command",
+            "if": "Bash(*psi *)",
+            "command": "node \"${CLAUDE_PLUGIN_ROOT}/hooks/hook.mjs\""
+          },
+          {
+            "type": "command",
+            "if": "Bash(*lighthouse*)",
+            "command": "node \"${CLAUDE_PLUGIN_ROOT}/hooks/hook.mjs\""
+          },
+          {
+            "type": "command",
+            "if": "Bash(*--cpu-prof*)",
+            "command": "node \"${CLAUDE_PLUGIN_ROOT}/hooks/hook.mjs\""
+          },
+          {
+            "type": "command",
+            "if": "Bash(*EXPLAIN*)",
+            "command": "node \"${CLAUDE_PLUGIN_ROOT}/hooks/hook.mjs\""
+          },
+          {
+            "type": "command",
+            "if": "Bash(*performance.now(*)",
+            "command": "node \"${CLAUDE_PLUGIN_ROOT}/hooks/hook.mjs\""
+          },
+          {
+            "type": "command",
+            "if": "Bash(*console.time(*)",
+            "command": "node \"${CLAUDE_PLUGIN_ROOT}/hooks/hook.mjs\""
+          },
+          {
+            "type": "command",
+            "if": "Bash(*hrtime*)",
+            "command": "node \"${CLAUDE_PLUGIN_ROOT}/hooks/hook.mjs\""
+          },
+          {
+            "type": "command",
+            "if": "Bash(*bench*)",
+            "command": "node \"${CLAUDE_PLUGIN_ROOT}/hooks/hook.mjs\""
+          }
+        ]
+      },
+      {
+        "matcher": "mcp__.*__(performance_start_trace|performance_analyze_insight|lighthouse_audit)|mcp__.*pagespeed.*|mcp__google-crux__.*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"${CLAUDE_PLUGIN_ROOT}/hooks/hook.mjs\""
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Skill",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"${CLAUDE_PLUGIN_ROOT}/hooks/hook.mjs\""
+          }
+        ]
+      }
+    ],
+    "SessionStart": [
+      {
+        "matcher": "compact",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"${CLAUDE_PLUGIN_ROOT}/hooks/hook.mjs\""
+          }
+        ]
+      }
+    ]
+  }
+}

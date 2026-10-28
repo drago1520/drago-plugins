@@ -1,10 +1,10 @@
 {
   "name": "unit-integration-testing",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "author": {
     "name": "drago1520"
   },
-  "description": "Rules for the tests Claude writes: pick the layer by cost, one behaviour per unit test, fakes over mocks, double only the boundary, real database in integration tests isolated by transaction, coverage as a map and flaky tests as bugs.",
+  "description": "Rules for the tests Claude writes: pick the layer by cost, one behaviour per unit test, fakes over mocks, double only the boundary, real database in integration tests isolated by transaction, coverage as a map and flaky tests as bugs, plus a hook that requires the skill before any test edit or test run.",
   "license": "MIT",
   "homepage": "https://github.com/drago1520/drago-plugins/tree/main/unit-integration-testing",
   "repository": "https://github.com/drago1520/drago-plugins"

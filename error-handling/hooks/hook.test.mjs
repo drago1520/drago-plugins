@@ -1,0 +1,23 @@
+import assert from "node:assert/strict";
+import { test } from "node:test";
+import { needsSkill } from "./hook.mjs";
+
+test("Edit adding a catch to a .ts file needs the skill", () => assert.ok(needsSkill({ file_path: "/r/notify.ts", new_string: "}).catch((e) => {" })));
+test("python heredoc in Bash editing a .ts file needs the skill", () => assert.ok(needsSkill({ command: "python3 - <<'EOF'\np='packages/db/src/utils/notify.ts'\ns=s.replace(a, 'throw new Error(x, { cause })')\nEOF" })));
+test("Write of a .py script that edits a .php file needs the skill", () => assert.ok(needsSkill({ file_path: "/tmp/fix.py", content: "open('index.php').read().replace('x', 'throw $e;')" })));
+test("plain .ts edit without keywords passes", () => assert.ok(!needsSkill({ file_path: "/r/a.ts", new_string: "const x = 1;" })));
+test("keyword in a markdown file passes", () => assert.ok(!needsSkill({ file_path: "/r/README.md", content: "we catch errors" })));
+test("keywords are case-sensitive", () => assert.ok(!needsSkill({ file_path: "/r/a.ts", new_string: "console.error(x); Catch; THROW" })));
+test("a catch in an .astro page needs the skill", () => assert.ok(needsSkill({ file_path: "/r/src/pages/cart.astro", new_string: "try { x() } catch (e) {}" })));
+test("a throw in a .mts file needs the skill", () => assert.ok(needsSkill({ file_path: "/r/a.mts", new_string: "throw e" })));
+test("python except needs the skill", () => assert.ok(needsSkill({ file_path: "/r/x.py", new_string: "except ValueError as e:" })));
+test("rust unwrap needs the skill", () => assert.ok(needsSkill({ file_path: "/r/src/main.rs", new_string: "let v = read().unwrap();" })));
+test("c errno needs the skill", () => assert.ok(needsSkill({ file_path: "/r/io.c", new_string: "if (errno == EINTR) perror(\"read\");" })));
+test("a .json file is not a .js file", () => assert.ok(!needsSkill({ file_path: "/r/package.json", content: "throw" })));
+test("rust unsafe block needs the skill", () => assert.ok(needsSkill({ file_path: "/r/src/ffi.rs", new_string: "unsafe { libc::free(p) }" })));
+test("as Order after JSON.parse needs the skill", () => assert.ok(needsSkill({ file_path: "/r/a.ts", new_string: "const o = JSON.parse(body) as Order;" })));
+test("as unknown as needs the skill", () => assert.ok(needsSkill({ file_path: "/r/a.ts", new_string: "const x = y as unknown as Z;" })));
+test("non-null user!.id needs the skill", () => assert.ok(needsSkill({ file_path: "/r/a.ts", new_string: "return user!.id;" })));
+test("non-null arr[0]!; needs the skill", () => assert.ok(needsSkill({ file_path: "/r/a.ts", new_string: "const v = arr[0]!;" })));
+test("import * as and != pass", () => assert.ok(!needsSkill({ file_path: "/r/a.ts", new_string: "import * as fs from \"node:fs\"; if (a != b && !c) x();" })));
+test("rust println! passes", () => assert.ok(!needsSkill({ file_path: "/r/main.rs", new_string: "println!(\"hi\");" })));

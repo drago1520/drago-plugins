@@ -1,0 +1,283 @@
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "if": "Write(*.ts)",
+            "command": "node \"${CLAUDE_PLUGIN_ROOT}/hooks/hook.mjs\""
+          },
+          {
+            "type": "command",
+            "if": "Edit(*.ts)",
+            "command": "node \"${CLAUDE_PLUGIN_ROOT}/hooks/hook.mjs\""
+          },
+          {
+            "type": "command",
+            "if": "Write(*.tsx)",
+            "command": "node \"${CLAUDE_PLUGIN_ROOT}/hooks/hook.mjs\""
+          },
+          {
+            "type": "command",
+            "if": "Edit(*.tsx)",
+            "command": "node \"${CLAUDE_PLUGIN_ROOT}/hooks/hook.mjs\""
+          },
+          {
+            "type": "command",
+            "if": "Write(*.mts)",
+            "command": "node \"${CLAUDE_PLUGIN_ROOT}/hooks/hook.mjs\""
+          },
+          {
+            "type": "command",
+            "if": "Edit(*.mts)",
+            "command": "node \"${CLAUDE_PLUGIN_ROOT}/hooks/hook.mjs\""
+          },
+          {
+            "type": "command",
+            "if": "Write(*.cts)",
+            "command": "node \"${CLAUDE_PLUGIN_ROOT}/hooks/hook.mjs\""
+          },
+          {
+            "type": "command",
+            "if": "Edit(*.cts)",
+            "command": "node \"${CLAUDE_PLUGIN_ROOT}/hooks/hook.mjs\""
+          },
+          {
+            "type": "command",
+            "if": "Write(*.js)",
+            "command": "node \"${CLAUDE_PLUGIN_ROOT}/hooks/hook.mjs\""
+          },
+          {
+            "type": "command",
+            "if": "Edit(*.js)",
+            "command": "node \"${CLAUDE_PLUGIN_ROOT}/hooks/hook.mjs\""
+          },
+          {
+            "type": "command",
+            "if": "Write(*.jsx)",
+            "command": "node \"${CLAUDE_PLUGIN_ROOT}/hooks/hook.mjs\""
+          },
+          {
+            "type": "command",
+            "if": "Edit(*.jsx)",
+            "command": "node \"${CLAUDE_PLUGIN_ROOT}/hooks/hook.mjs\""
+          },
+          {
+            "type": "command",
+            "if": "Write(*.mjs)",
+            "command": "node \"${CLAUDE_PLUGIN_ROOT}/hooks/hook.mjs\""
+          },
+          {
+            "type": "command",
+            "if": "Edit(*.mjs)",
+            "command": "node \"${CLAUDE_PLUGIN_ROOT}/hooks/hook.mjs\""
+          },
+          {
+            "type": "command",
+            "if": "Write(*.cjs)",
+            "command": "node \"${CLAUDE_PLUGIN_ROOT}/hooks/hook.mjs\""
+          },
+          {
+            "type": "command",
+            "if": "Edit(*.cjs)",
+            "command": "node \"${CLAUDE_PLUGIN_ROOT}/hooks/hook.mjs\""
+          },
+          {
+            "type": "command",
+            "if": "Write(*.astro)",
+            "command": "node \"${CLAUDE_PLUGIN_ROOT}/hooks/hook.mjs\""
+          },
+          {
+            "type": "command",
+            "if": "Edit(*.astro)",
+            "command": "node \"${CLAUDE_PLUGIN_ROOT}/hooks/hook.mjs\""
+          },
+          {
+            "type": "command",
+            "if": "Write(*.php)",
+            "command": "node \"${CLAUDE_PLUGIN_ROOT}/hooks/hook.mjs\""
+          },
+          {
+            "type": "command",
+            "if": "Edit(*.php)",
+            "command": "node \"${CLAUDE_PLUGIN_ROOT}/hooks/hook.mjs\""
+          },
+          {
+            "type": "command",
+            "if": "Write(*.py)",
+            "command": "node \"${CLAUDE_PLUGIN_ROOT}/hooks/hook.mjs\""
+          },
+          {
+            "type": "command",
+            "if": "Edit(*.py)",
+            "command": "node \"${CLAUDE_PLUGIN_ROOT}/hooks/hook.mjs\""
+          },
+          {
+            "type": "command",
+            "if": "Write(*.rs)",
+            "command": "node \"${CLAUDE_PLUGIN_ROOT}/hooks/hook.mjs\""
+          },
+          {
+            "type": "command",
+            "if": "Edit(*.rs)",
+            "command": "node \"${CLAUDE_PLUGIN_ROOT}/hooks/hook.mjs\""
+          },
+          {
+            "type": "command",
+            "if": "Write(*.c)",
+            "command": "node \"${CLAUDE_PLUGIN_ROOT}/hooks/hook.mjs\""
+          },
+          {
+            "type": "command",
+            "if": "Edit(*.c)",
+            "command": "node \"${CLAUDE_PLUGIN_ROOT}/hooks/hook.mjs\""
+          },
+          {
+            "type": "command",
+            "if": "Write(*.h)",
+            "command": "node \"${CLAUDE_PLUGIN_ROOT}/hooks/hook.mjs\""
+          },
+          {
+            "type": "command",
+            "if": "Edit(*.h)",
+            "command": "node \"${CLAUDE_PLUGIN_ROOT}/hooks/hook.mjs\""
+          }
+        ]
+      },
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "if": "Bash(*catch*)",
+            "command": "node \"${CLAUDE_PLUGIN_ROOT}/hooks/hook.mjs\""
+          },
+          {
+            "type": "command",
+            "if": "Bash(*throw*)",
+            "command": "node \"${CLAUDE_PLUGIN_ROOT}/hooks/hook.mjs\""
+          },
+          {
+            "type": "command",
+            "if": "Bash(*finally*)",
+            "command": "node \"${CLAUDE_PLUGIN_ROOT}/hooks/hook.mjs\""
+          },
+          {
+            "type": "command",
+            "if": "Bash(*Error(*)",
+            "command": "node \"${CLAUDE_PLUGIN_ROOT}/hooks/hook.mjs\""
+          },
+          {
+            "type": "command",
+            "if": "Bash(*reject(*)",
+            "command": "node \"${CLAUDE_PLUGIN_ROOT}/hooks/hook.mjs\""
+          },
+          {
+            "type": "command",
+            "if": "Bash(*cause*)",
+            "command": "node \"${CLAUDE_PLUGIN_ROOT}/hooks/hook.mjs\""
+          },
+          {
+            "type": "command",
+            "if": "Bash(*set_error_handler*)",
+            "command": "node \"${CLAUDE_PLUGIN_ROOT}/hooks/hook.mjs\""
+          },
+          {
+            "type": "command",
+            "if": "Bash(*except*)",
+            "command": "node \"${CLAUDE_PLUGIN_ROOT}/hooks/hook.mjs\""
+          },
+          {
+            "type": "command",
+            "if": "Bash(*raise *)",
+            "command": "node \"${CLAUDE_PLUGIN_ROOT}/hooks/hook.mjs\""
+          },
+          {
+            "type": "command",
+            "if": "Bash(*panic!*)",
+            "command": "node \"${CLAUDE_PLUGIN_ROOT}/hooks/hook.mjs\""
+          },
+          {
+            "type": "command",
+            "if": "Bash(*unwrap()*)",
+            "command": "node \"${CLAUDE_PLUGIN_ROOT}/hooks/hook.mjs\""
+          },
+          {
+            "type": "command",
+            "if": "Bash(*.expect(*)",
+            "command": "node \"${CLAUDE_PLUGIN_ROOT}/hooks/hook.mjs\""
+          },
+          {
+            "type": "command",
+            "if": "Bash(*Err(*)",
+            "command": "node \"${CLAUDE_PLUGIN_ROOT}/hooks/hook.mjs\""
+          },
+          {
+            "type": "command",
+            "if": "Bash(*map_err*)",
+            "command": "node \"${CLAUDE_PLUGIN_ROOT}/hooks/hook.mjs\""
+          },
+          {
+            "type": "command",
+            "if": "Bash(*unsafe*)",
+            "command": "node \"${CLAUDE_PLUGIN_ROOT}/hooks/hook.mjs\""
+          },
+          {
+            "type": "command",
+            "if": "Bash(*as any*)",
+            "command": "node \"${CLAUDE_PLUGIN_ROOT}/hooks/hook.mjs\""
+          },
+          {
+            "type": "command",
+            "if": "Bash(*as unknown*)",
+            "command": "node \"${CLAUDE_PLUGIN_ROOT}/hooks/hook.mjs\""
+          },
+          {
+            "type": "command",
+            "if": "Bash(*!.*)",
+            "command": "node \"${CLAUDE_PLUGIN_ROOT}/hooks/hook.mjs\""
+          },
+          {
+            "type": "command",
+            "if": "Bash(*!;*)",
+            "command": "node \"${CLAUDE_PLUGIN_ROOT}/hooks/hook.mjs\""
+          },
+          {
+            "type": "command",
+            "if": "Bash(*errno*)",
+            "command": "node \"${CLAUDE_PLUGIN_ROOT}/hooks/hook.mjs\""
+          },
+          {
+            "type": "command",
+            "if": "Bash(*perror(*)",
+            "command": "node \"${CLAUDE_PLUGIN_ROOT}/hooks/hook.mjs\""
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Skill",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"${CLAUDE_PLUGIN_ROOT}/hooks/hook.mjs\""
+          }
+        ]
+      }
+    ],
+    "SessionStart": [
+      {
+        "matcher": "compact",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"${CLAUDE_PLUGIN_ROOT}/hooks/hook.mjs\""
+          }
+        ]
+      }
+    ]
+  }
+}

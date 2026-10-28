@@ -1,0 +1,72 @@
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"${CLAUDE_PLUGIN_ROOT}/hooks/hook.mjs\""
+          }
+        ]
+      },
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "if": "Bash(*k6*)",
+            "command": "node \"${CLAUDE_PLUGIN_ROOT}/hooks/hook.mjs\""
+          },
+          {
+            "type": "command",
+            "if": "Bash(*locust*)",
+            "command": "node \"${CLAUDE_PLUGIN_ROOT}/hooks/hook.mjs\""
+          },
+          {
+            "type": "command",
+            "if": "Bash(*artillery*)",
+            "command": "node \"${CLAUDE_PLUGIN_ROOT}/hooks/hook.mjs\""
+          },
+          {
+            "type": "command",
+            "if": "Bash(*autocannon*)",
+            "command": "node \"${CLAUDE_PLUGIN_ROOT}/hooks/hook.mjs\""
+          },
+          {
+            "type": "command",
+            "if": "Bash(*oha *)",
+            "command": "node \"${CLAUDE_PLUGIN_ROOT}/hooks/hook.mjs\""
+          },
+          {
+            "type": "command",
+            "if": "Bash(*wrk *)",
+            "command": "node \"${CLAUDE_PLUGIN_ROOT}/hooks/hook.mjs\""
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Skill",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"${CLAUDE_PLUGIN_ROOT}/hooks/hook.mjs\""
+          }
+        ]
+      }
+    ],
+    "SessionStart": [
+      {
+        "matcher": "compact",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"${CLAUDE_PLUGIN_ROOT}/hooks/hook.mjs\""
+          }
+        ]
+      }
+    ]
+  }
+}

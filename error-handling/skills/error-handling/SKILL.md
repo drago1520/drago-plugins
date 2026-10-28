@@ -32,12 +32,15 @@ I fail fast. I surface a problem the moment it appears instead of limping on wit
 
 Anything I did not construct myself is suspect: request bodies, query params, files, env vars, network responses. I validate once at the door with a schema (zod in this codebase), get a typed value, and the interior trusts it. I do not scatter defensive re-checks of the same field through downstream functions. Bad input is an operational error handled at the edge, so it never becomes a bug deep inside.
 
+A type assertion is a claim the compiler cannot check, so I never use one in place of that validation. `JSON.parse(body) as Order`, `row as any` and `user!.id` on data I did not construct all tell TypeScript to trust input that nobody checked, and the first wrong field crashes somewhere far from the door. I parse such data with a schema at the boundary, preferably zod, and the type comes from the schema. Inside code I fully control, `as` and `!` are acceptable only when I can name the invariant that makes them true, and I write that invariant in a one-line comment next to the assertion.
+
 ## Anti-patterns I refuse to write
 
 - **Empty catch.** A swallowed error turns a loud failure into a silent one that surfaces days later as corrupt data.
 - **Log-and-fallback catch.** `catch (e) { console.error(e); return null }` is an empty catch with extra steps. The error reporter (Sentry, Bugsink) never sees it, nobody gets notified, and every caller now receives a fake value. If I think a fallback is right, I ask first.
 - **Catch too broad.** A catch-all around a big block catches my own `TypeError` alongside the network error and relabels the bug as an outage.
 - **Dropping the cause.** When I wrap, I keep the original: `throw new Error('checkout failed', { cause: e })`. Rewriting the error from scratch severs the stack back to the source.
+- **Failure inside the error path.** When handling a failure triggers another operation that can fail (alert mail, notification, cleanup), that second failure must not replace the first: I report the original before attempting it, and wrap the second with the original as `cause`.
 - **Log-and-rethrow at every layer.** One failure becomes five near-identical log entries. I log once, at the boundary that handles it.
 - **Blind retry.** I retry only idempotent operations, with exponential backoff. A non-idempotent operation (charge a card) needs an idempotency key before it may be retried.
 
@@ -72,6 +75,7 @@ When I review error handling I check each of these and name the line that breaks
 | Distinguish operational errors from bugs. | Catch too broadly and hide bugs. |
 | Throw low, handle high. | Use exceptions for normal control flow. |
 | Validate at the boundary. | Drop the original error when wrapping. |
+| Name the invariant behind every `as` or `!`. | Cast unchecked input with `as` or `!`. |
 | Guarantee cleanup with finally. | Log-and-rethrow at every layer. |
 | Preserve the cause. | Retry non-idempotent operations blindly. |
 | Write messages someone can act on. | Put secrets in messages. |
