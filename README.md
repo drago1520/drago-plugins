@@ -63,3 +63,11 @@ Claude finds the knee of the curve on purpose, with an open-model workload, hone
 ```
 /plugin install load-testing@drago-plugins
 ```
+
+### [work-session-tracking-log-reminder](work-session-tracking-log-reminder/README.md)
+
+Claude reminds you, when you close the session or clear it, to log what you did in GitHub issues or Docmost, so you build a track record that makes writing a CV and pitching yourself easier.
+
+```
+/plugin install work-session-tracking-log-reminder@drago-plugins
+```

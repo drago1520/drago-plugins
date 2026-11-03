@@ -34,6 +34,11 @@
       "name": "load-testing",
       "source": "./load-testing",
       "description": "Find the knee on purpose: the right test profile, an open-model workload, no coordinated omission, errors before percentiles, the first resource that queued."
+    },
+    {
+      "name": "work-session-tracking-log-reminder",
+      "source": "./work-session-tracking-log-reminder",
+      "description": "Reminds you on exit or /clear to log what the session did in GitHub issues or Docmost, for a track record over the years."
     }
   ],
   "metadata": {

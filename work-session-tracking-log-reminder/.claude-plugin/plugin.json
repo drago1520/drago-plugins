@@ -1,0 +1,11 @@
+{
+  "name": "work-session-tracking-log-reminder",
+  "version": "1.0.0",
+  "author": {
+    "name": "drago1520"
+  },
+  "description": "On exit or /clear, reminds you to log what the session did in GitHub issues or Docmost.",
+  "license": "MIT",
+  "homepage": "https://github.com/drago1520/drago-plugins/tree/main/work-session-tracking-log-reminder",
+  "repository": "https://github.com/drago1520/drago-plugins"
+}
