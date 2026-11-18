@@ -12,8 +12,9 @@ const file = tool_input?.file_path ?? "";
 if (hook_event_name === "SessionStart") rmSync(marker, { force: true });
 else if (hook_event_name === "PostToolUse") {
   if (/(^|:)skill-to-plugin$/.test(tool_input?.skill ?? "")) { mkdirSync(dir, { recursive: true }); writeFileSync(marker, ""); }
-} else if (!existsSync(marker) && (/[\\/]drago-plugins[\\/]/.test(file) || /-skill\.md$/.test(file))) {
-  console.log(JSON.stringify({
+} else if (/[\\/]drago-plugins[\\/]/.test(file) || /-skill\.md$/.test(file)) {
+  if (existsSync(marker)) console.log(JSON.stringify({ hookSpecificOutput: { hookEventName: "PreToolUse", additionalContext: "skill-to-plugin skill: draft <name>-skill.md in the project root first and wait for approval; hook = if filter + block until the skill loads + one-line reminder; no private names or paths in drago-plugins; pipe-test the hook." } }));
+  else console.log(JSON.stringify({
     hookSpecificOutput: {
       hookEventName: "PreToolUse",
       permissionDecision: "deny",

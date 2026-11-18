@@ -34,7 +34,7 @@ When the user wants the skill enforced, I explain the hook in a few lines and wa
 
 - `hooks.json` registers a `PreToolUse` hook with an `if` filter in permission-rule form, such as `Bash(*gh issue create*)` or `Write(*.md)`. Claude Code checks the filter itself, so Node starts only when the call matches and every other call costs nothing. A folder filter such as `Write(**/drago-plugins/**)` matches every file under that folder at any depth. Claude Code reads hooks at session start, so I test a new filter after a restart.
 - `hook.mjs` blocks the matching call with `permissionDecision: "deny"` and a reason that says "Load the <name> skill with the Skill tool first, then retry". A `PostToolUse` hook on `Skill` writes a marker file at `~/.cache/drago-plugins/<name>/<session_id>` when the skill loads, and the marker lets later calls through. A `SessionStart` hook with matcher `compact` deletes the marker, so the skill loads again after a compaction.
-- A plugin that only reminds, like `plain-prose-docs`, returns `additionalContext`, which adds a one-line reminder and lets the call run.
+- Once the marker exists, every matching call gets a one-line reminder of the skill's key rules through `additionalContext`, so the rules stay in front of me for the whole session. Node already runs on every matching call, so the reminder costs nothing extra.
 
 I mention one limit when it applies: a `PreToolUse` hook fires after Claude has written the tool input, so a reminder arrives too late for that call. A deny makes Claude load the skill and redo the call.
 

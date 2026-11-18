@@ -11,8 +11,9 @@ const dir = join(homedir(), ".cache", "drago-plugins", "github-issue"), marker =
 if (hook_event_name === "SessionStart") rmSync(marker, { force: true });
 else if (hook_event_name === "PostToolUse") {
   if (/(^|:)github-issue$/.test(tool_input?.skill ?? "")) { mkdirSync(dir, { recursive: true }); writeFileSync(marker, ""); }
-} else if (!existsSync(marker) && /gh issue create/.test(tool_input?.command ?? "")) {
-  console.log(JSON.stringify({
+} else if (/gh issue create/.test(tool_input?.command ?? "")) {
+  if (existsSync(marker)) console.log(JSON.stringify({ hookSpecificOutput: { hookEventName: "PreToolUse", additionalContext: "github-issue skill: title is <type>(<scope>): <business problem>; open to-dos on top; then Business problem, Technical problem, What we did; --body-file; confirm labels exist." } }));
+  else console.log(JSON.stringify({
     hookSpecificOutput: {
       hookEventName: "PreToolUse",
       permissionDecision: "deny",
