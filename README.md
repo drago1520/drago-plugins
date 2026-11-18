@@ -71,3 +71,11 @@ Claude reminds you, when you close the session or clear it, to log what you did 
 ```
 /plugin install work-session-tracking-log-reminder@drago-plugins
 ```
+
+### [github-issue](github-issue/README.md)
+
+Claude writes GitHub issues with the business problem as the title, the open to-dos on top, and a short business problem, technical problem and what-we-did body.
+
+```
+/plugin install github-issue@drago-plugins
+```

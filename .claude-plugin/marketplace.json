@@ -39,6 +39,11 @@
       "name": "work-session-tracking-log-reminder",
       "source": "./work-session-tracking-log-reminder",
       "description": "Reminds you on exit or /clear to log what the session did in GitHub issues or Docmost, for a track record over the years."
+    },
+    {
+      "name": "github-issue",
+      "source": "./github-issue",
+      "description": "GitHub issues with a business-problem title, open to-dos on top, and a business problem / technical problem / what we did body; blocks gh issue create until the skill is loaded."
     }
   ],
   "metadata": {

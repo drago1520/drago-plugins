@@ -1,0 +1,11 @@
+{
+  "name": "github-issue",
+  "version": "1.0.0",
+  "author": {
+    "name": "drago1520"
+  },
+  "description": "GitHub issues with a business-problem title in conventional commit form, open to-dos on top, and a business problem / technical problem / what we did body, plus a hook that requires the skill before any `gh issue create`.",
+  "license": "MIT",
+  "homepage": "https://github.com/drago1520/drago-plugins/tree/main/github-issue",
+  "repository": "https://github.com/drago1520/drago-plugins"
+}
