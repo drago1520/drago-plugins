@@ -44,6 +44,11 @@
       "name": "github-issue",
       "source": "./github-issue",
       "description": "GitHub issues with a business-problem title, open to-dos on top, and a business problem / technical problem / what we did body; blocks gh issue create until the skill is loaded."
+    },
+    {
+      "name": "skill-to-plugin",
+      "source": "./skill-to-plugin",
+      "description": "Turns a workflow into a skill draft in the project root, then into a drago-plugins plugin with a hook; blocks writes to drago-plugins and *-skill.md drafts until the skill is loaded."
     }
   ],
   "metadata": {

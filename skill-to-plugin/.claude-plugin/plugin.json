@@ -1,0 +1,11 @@
+{
+  "name": "skill-to-plugin",
+  "version": "1.0.0",
+  "author": {
+    "name": "drago1520"
+  },
+  "description": "Turns a workflow into a skill draft in the project root, then into a drago-plugins plugin with a hook that requires the skill, plus a hook that requires this skill before any write to drago-plugins or to a *-skill.md draft.",
+  "license": "MIT",
+  "homepage": "https://github.com/drago1520/drago-plugins/tree/main/skill-to-plugin",
+  "repository": "https://github.com/drago1520/drago-plugins"
+}

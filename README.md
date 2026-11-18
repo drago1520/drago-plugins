@@ -79,3 +79,11 @@ Claude writes GitHub issues with the business problem as the title, the open to-
 ```
 /plugin install github-issue@drago-plugins
 ```
+
+### [skill-to-plugin](skill-to-plugin/README.md)
+
+Claude turns a workflow you just did into a skill draft in your project root, and after you approve it, into a plugin here with a hook that requires the skill.
+
+```
+/plugin install skill-to-plugin@drago-plugins
+```

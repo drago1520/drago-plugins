@@ -1,0 +1,53 @@
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "if": "Write(**/drago-plugins/**)",
+            "command": "node \"${CLAUDE_PLUGIN_ROOT}/hooks/hook.mjs\""
+          },
+          {
+            "type": "command",
+            "if": "Edit(**/drago-plugins/**)",
+            "command": "node \"${CLAUDE_PLUGIN_ROOT}/hooks/hook.mjs\""
+          },
+          {
+            "type": "command",
+            "if": "Write(*-skill.md)",
+            "command": "node \"${CLAUDE_PLUGIN_ROOT}/hooks/hook.mjs\""
+          },
+          {
+            "type": "command",
+            "if": "Edit(*-skill.md)",
+            "command": "node \"${CLAUDE_PLUGIN_ROOT}/hooks/hook.mjs\""
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Skill",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"${CLAUDE_PLUGIN_ROOT}/hooks/hook.mjs\""
+          }
+        ]
+      }
+    ],
+    "SessionStart": [
+      {
+        "matcher": "compact",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"${CLAUDE_PLUGIN_ROOT}/hooks/hook.mjs\""
+          }
+        ]
+      }
+    ]
+  }
+}
